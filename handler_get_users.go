@@ -12,5 +12,5 @@ func (apiCfg *apiConfig) handlerGetUsers(w http.ResponseWriter, r *http.Request)
 		log.Fatal("Error getting users. Examine the request code.")
 	}
 
-	respondWithJSON(w, 200, users)
+	respondWithJSON(w, 200, databaseConvertUserstoUsers(users))
 }
